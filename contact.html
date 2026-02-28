@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+       <section class="home-one">
+    <div id="header">
+        <a href="./index.html">
+        <div class="img-main">
+            <img class="logo" src="./img/logo.jpg" alt="logo">
+        </div>
+        </a>
+        <div class="main-list">
+<ul class="header-li">
+    <a href="./index.html"><li>Home</li></a>
+    <a href="./products.html"><li>Products</li></a>
+    <a href="./about.html"><li>About</li></a>
+    <a href="./contact.html"><li>Contact</li></a>
+</ul>
+        <a href="./products.html"></div>
+        <div class="main-icon">
+            <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+        </div>
+    </a>
+    </div>
+    <!-- <div class="login-card">
+        <h2>Create Account</h2>
+        <form id="registrationForm">
+            <div class="input-group">
+                <input type="text" id="firstName" placeholder="First Name" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="lastName" placeholder="Surname" required>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Gmail (must contain @)" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password (min. 8 symbols)" required>
+            </div>
+            <button type="submit" id="submitBtn">Sign Up</button>
+        </form>
+        <p id="message"></p>
+    </div> -->
+    <head>
+    <style>
+        /* body { font-family: sans-serif; display: flex; justify-content: center; padding: 50px; background: #f4f4f4; }
+        .form-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 300px; } */
+        .form-card {
+    /* YOUR SPECIFIC SIZES */
+    width: 500px;
+    height: 700px;
+
+    /* Visual Styling */
+    background: white;
+    padding: 40px; /* Increased padding for the bigger size */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    
+    /* This centers the inputs inside the tall 700px box */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    
+    /* Keeps the card in the middle of the screen */
+    margin: auto; 
+}
+
+/* Make inputs look better inside a larger card */
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 1.1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+        input { 
+            width: 100%; padding: 10px; margin: 10px 0; border: 2px solid #ccc; 
+            border-radius: 4px; box-sizing: border-box; outline: none; transition: 0.2s;
+        }
+
+        /* THE COLORS */
+        .red-border { border: 2px solid #ff4d4d !important; background-color: #fff0f0; }
+        .green-border { border: 2px solid #2ecc71 !important; background-color: #f0fff4; }
+        
+        h3 { margin-top: 0; color: #333; }
+        .hint { font-size: 12px; color: #666; margin-top: -8px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <h3>Sign Up</h3>
+    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Surname">
+    
+    <input type="text" id="gmail" placeholder="Gmail (must have @)">
+    
+    <input type="password" id="pass" placeholder="Password (min 8 symbols)">
+    <div id="passHint" class="hint">Type 8 symbols...</div>
+    
+    <button class="register" style="width:100%; padding:10px; cursor:pointer;">Register</button>
+</div>
+
+<script>
+    const gmailInput = document.getElementById('gmail');
+    const passInput = document.getElementById('pass');
+    const passHint = document.getElementById('passHint');
+
+    // 1. Password Logic (8 Symbols)
+    passInput.addEventListener('input', function() {
+        const len = passInput.value.length;
+        
+        if (len === 0) {
+            passInput.className = ""; // Reset
+        } else if (len < 8) {
+            passInput.className = "red-border"; // SHOW RED
+            passHint.innerText = "Too short! (" + len + "/8)";
+            passHint.style.color = "#ff4d4d";
+        } else {
+            passInput.className = "green-border"; // SHOW GREEN
+            passHint.innerText = "Password is long enough! ✅";
+            passHint.style.color = "#2ecc71";
+        }
+    });
+
+    // 2. Gmail Logic (@ Symbol)
+    gmailInput.addEventListener('input', function() {
+        const val = gmailInput.value;
+        
+        if (val.length === 0) {
+            gmailInput.className = "";
+        } else if (val.includes('@')) {
+            gmailInput.className = "green-border";
+        } else {
+            gmailInput.className = "red-border";
+        }
+    });
+</script>
+    </section>
+    <script src="./app.js"></script>
+</body>
+</html>
